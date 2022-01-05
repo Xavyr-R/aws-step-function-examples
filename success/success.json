@@ -1,0 +1,10 @@
+{
+  "Comment": "Hello world state machine",
+  "StartAt": "Success",
+  "States": {
+    "Success": {
+      "Type": "Succeed",
+      "Comment": "This indicates that the step function has executed successfully. Note that this is only to make it explicit as the step function counts as successful if all steps are executed without failure anyway"
+    }
+  }
+}

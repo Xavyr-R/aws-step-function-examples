@@ -1,0 +1,10 @@
+{
+  "Comment": "This workflow gets triggered by the main step function",
+  "StartAt": "Pass",
+  "States": {
+    "Pass": {
+      "Type": "Pass",
+      "End": true
+    }
+  }
+}

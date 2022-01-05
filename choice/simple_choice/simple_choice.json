@@ -1,0 +1,41 @@
+{
+  "Comment": "Hello world state machine",
+  "StartAt": "Choice",
+  "States": {
+    "Choice": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.some_input",
+          "StringEquals": "A",
+          "Next": "Condition1TrueBranch",
+          "Comment": "Input is A"
+        },
+        {
+          "Variable": "$.some_input",
+          "StringEquals": "B",
+          "Next": "Condition2TrueBranch",
+          "Comment": "Input is B"
+        }
+      ],
+      "Default": "NoConditionTrueBranch",
+      "Comment": "Check whether provided input is A, B or something else"
+    },
+    "Condition1TrueBranch": {
+      "Type": "Pass",
+      "End": true,
+      "Comment": "Input equals to A "
+    },
+    "NoConditionTrueBranch": {
+      "Type": "Pass",
+      "Result": "Hello World!",
+      "End": true,
+      "Comment": "Input does not equal to A or B"
+    },
+    "Condition2TrueBranch": {
+      "Type": "Pass",
+      "End": true,
+      "Comment": "Input equals to B"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "Comment": "Hello world state machine",
+  "StartAt": "Glue StartJobRun",
+  "States": {
+    "Glue StartJobRun": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun",
+      "Parameters": {
+        "JobName": "myGlueJobName"
+      },
+      "End": true,
+      "Comment": "Starting a glue job without input parameters"
+    }
+  }
+}

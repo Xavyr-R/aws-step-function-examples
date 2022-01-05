@@ -1,0 +1,12 @@
+{
+  "Comment": "Hello world state machine",
+  "StartAt": "Fail",
+  "States": {
+    "Fail": {
+      "Type": "Fail",
+      "Error": "ExampleError",
+      "Cause": "Error caused by a step function definition that always fails",
+      "Comment": "Example of the fail state, note that this is not the best way to use it as it does nothing but failing"
+    }
+  }
+}

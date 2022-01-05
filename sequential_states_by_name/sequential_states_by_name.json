@@ -1,0 +1,16 @@
+{
+  "Comment": "Hello world state machine",
+  "StartAt": "FirstTask",
+  "States": {
+    "FirstTask": {
+      "Type": "Pass",
+      "Comment": "This will be executed first, the Next part defines what to do after this has been executed",
+      "Next": "SecondTask"
+    },
+    "SecondTask": {
+      "Type": "Pass",
+      "End": true,
+      "Comment": "This will only start after the FirstTask is done, the End part indicates that there is no step after this one"
+    }
+  }
+}

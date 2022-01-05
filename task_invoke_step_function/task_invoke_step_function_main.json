@@ -1,0 +1,19 @@
+{
+  "Comment": "This step function will execute a child step function and wait for its result",
+  "StartAt": "Step Functions StartExecution",
+  "States": {
+    "Step Functions StartExecution": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::states:startExecution.sync:2",
+      "Parameters": {
+        "StateMachineArn": "arn:aws:states:eu-west-1:XXXXXXXXXXXX:stateMachine:task_invoke_step_function_child",
+        "Input": {
+          "StatePayload": "Hello from Step Functions!",
+          "AWS_STEP_FUNCTIONS_STARTED_BY_EXECUTION_ID.$": "$$.Execution.Id"
+        }
+      },
+      "End": true,
+      "Comment": "Call another step function to execute, wait for it to finish"
+    }
+  }
+}

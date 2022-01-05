@@ -1,0 +1,11 @@
+{
+  "Comment": "Hello world state machine",
+  "StartAt": "Pass",
+  "States": {
+    "Pass": {
+      "Type": "Pass",
+      "End": true,
+      "Comment": "This does nothing, usually used as placeholder until new functionality is ready"
+    }
+  }
+}

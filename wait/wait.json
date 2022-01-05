@@ -1,0 +1,12 @@
+{
+  "Comment": "Hello world state machine",
+  "StartAt": "Wait",
+  "States": {
+    "Wait": {
+      "Type": "Wait",
+      "Seconds": 5,
+      "End": true,
+      "Comment": "Wait for 5 seconds before continuing "
+    }
+  }
+}

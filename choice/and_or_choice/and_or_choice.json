@@ -1,0 +1,57 @@
+{
+  "Comment": "Hello world state machine",
+  "StartAt": "Choice",
+  "States": {
+    "Choice": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Or": [
+            {
+              "Variable": "$.some_numeric_input",
+              "NumericLessThan": 25
+            },
+            {
+              "Variable": "$.some_numeric_input",
+              "NumericGreaterThan": 100
+            }
+          ],
+          "Next": "Condition1TrueBranch",
+          "Comment": "Input is below 25 or above 100"
+        },
+        {
+          "And": [
+            {
+              "Variable": "$.some_numeric_input",
+              "NumericLessThan": 100
+            },
+            {
+              "Variable": "$.some_numeric_input",
+              "NumericGreaterThan": 50
+            }
+          ],
+          "Next": "Condition2TrueBranch",
+          "Comment": "Input is between 50 and 100"
+        }
+      ],
+      "Default": "NoConditionTrueBranch",
+      "Comment": "Check whether provided input falls in a certain range"
+    },
+    "Condition1TrueBranch": {
+      "Type": "Pass",
+      "End": true,
+      "Comment": "Input equals to is lower than 25 or higher than 100"
+    },
+    "NoConditionTrueBranch": {
+      "Type": "Pass",
+      "Result": "Hello World!",
+      "End": true,
+      "Comment": "input is between 25 and 50"
+    },
+    "Condition2TrueBranch": {
+      "Type": "Pass",
+      "End": true,
+      "Comment": "Input is between 50 and 100"
+    }
+  }
+}

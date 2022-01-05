@@ -1,0 +1,23 @@
+{
+  "Comment": "Hello world state machine",
+  "StartAt": "Map",
+  "States": {
+    "Map": {
+      "Type": "Map",
+      "Iterator": {
+        "StartAt": "FakeAction",
+        "States": {
+          "FakeAction": {
+            "Type": "Pass",
+            "End": true,
+            "Comment": "This action will be done for every item in the input collection. Note that its a pass as example"
+          }
+        }
+      },
+      "End": true,
+      "ItemsPath": "$.some_collection_input",
+      "MaxConcurrency": 2,
+      "Comment": "This map will iterate over the collection given in $.some_collection_input and for each item it will run its content. The MaxConcurrency variable indicates that 2 items can be run in parallel"
+    }
+  }
+}
