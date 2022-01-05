@@ -1,16 +1,16 @@
 {
-  "Comment": "State machine showing how to invoke a lambda function without payload. Note that the XXs are the account id of the account where the lambda function is created",
+  "Comment": "State machine invoking a lambda. Note that the InputPath filters the step input to only contain whatever is on the $.foo path",
   "StartAt": "Lambda Invoke",
   "States": {
     "Lambda Invoke": {
       "Type": "Task",
       "Resource": "arn:aws:states:::lambda:invoke",
-      "OutputPath": "$.Payload",
       "Parameters": {
         "FunctionName": "arn:aws:lambda:eu-west-1:XXXXXXXXXXXX:function:my_lambda:$LATEST"
       },
       "End": true,
-      "Comment": "Invoke a lambda function without payload"
+      "InputPath": "$.foo",
+      "Comment": "Invoke lambda, the InputPath filters the step input to only contain whatever is on the $.foo path"
     }
   }
 }

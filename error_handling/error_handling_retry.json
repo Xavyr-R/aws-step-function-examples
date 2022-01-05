@@ -1,14 +1,12 @@
 {
-  "Comment": "State machine showing how to invoke a lambda function with the step input as payload. Note that the XXs are the account id of the account where the lambda function is created",
+  "Comment": "State machine showing how to invoke a lambda function, retry on three specific errors",
   "StartAt": "Lambda Invoke",
   "States": {
     "Lambda Invoke": {
       "Type": "Task",
       "Resource": "arn:aws:states:::lambda:invoke",
-      "OutputPath": "$.Payload",
       "Parameters": {
-        "FunctionName": "arn:aws:lambda:eu-west-1:XXXXXXXXXXXX:function:my_lambda:$LATEST",
-        "Payload.$": "$"
+        "FunctionName": "arn:aws:lambda:eu-west-1:XXXXXXXXXXXX:function:my_lambda:$LATEST"
       },
       "Retry": [
         {
@@ -23,7 +21,7 @@
         }
       ],
       "End": true,
-      "Comment": "Invoke a lambda function with step input as payload"
+      "Comment": "Invoke a lambda function, retry on three specific errors"
     }
   }
 }

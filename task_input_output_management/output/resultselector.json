@@ -1,0 +1,20 @@
+{
+  "Comment": "State machine invoking a lambda.It's output is formatted and it's inputs and outputs are combined",
+  "StartAt": "Lambda Invoke",
+  "States": {
+    "Lambda Invoke": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:eu-west-1:XXXXXXXXXXXX:function:my_lambda:$LATEST"
+      },
+      "End": true,
+      "ResultSelector": {
+        "success.$": "$.success",
+        "all.$": "$.body.all"
+      },
+      "ResultPath": "$.foo.lambda_output",
+      "Comment": "Format the output of the lambda function using resultselector and combine it with the input of this step using the resultpath"
+    }
+  }
+}

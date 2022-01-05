@@ -1,0 +1,22 @@
+{
+  "Comment": "State machine showing full output management",
+  "StartAt": "Lambda Invoke",
+  "States": {
+    "Lambda Invoke": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:eu-west-1:XXXXXXXXXXXX:function:my_lambda:$LATEST"
+      },
+      "End": true,
+      "OutputPath": "$.foo",
+      "ResultSelector": {
+        "success.$": "$.success",
+        "all.$": "$.body.all"
+      },
+      "ResultPath": "$.foo.lambda_output",
+      "Comment": "Format lambda result using ResultSelector, combine in-and (formatted) output using ResultPath, only take the $.foo path of the combined in-and output using OutputPath"
+
+    }
+  }
+}

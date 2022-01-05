@@ -1,0 +1,38 @@
+{
+  "Comment": "State machine showing how to catch errors",
+  "StartAt": "Lambda Invoke",
+  "States": {
+    "Lambda Invoke": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:eu-west-1:XXXXXXXXXXXX:function:my_lambda:$LATEST"
+      },
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "Cleanup"
+        }
+      ],
+      "Next": "Process"
+    },
+    "Process": {
+      "Type": "Pass",
+      "Next": "Success",
+      "Comment": "Do some processing after lambda succeeds"
+    },
+    "Success": {
+      "Type": "Succeed"
+    },
+    "Cleanup": {
+      "Type": "Pass",
+      "Next": "Fail",
+      "Comment": "Cleanup processed data if lambda fails"
+    },
+    "Fail": {
+      "Type": "Fail"
+    }
+  }
+}
