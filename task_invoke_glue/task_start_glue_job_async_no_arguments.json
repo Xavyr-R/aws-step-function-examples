@@ -1,5 +1,5 @@
 {
-  "Comment": "Hello world state machine",
+  "Comment": "State machine showing how to start a glue job asynchronously without any further arguments",
   "StartAt": "Glue StartJobRun",
   "States": {
     "Glue StartJobRun": {

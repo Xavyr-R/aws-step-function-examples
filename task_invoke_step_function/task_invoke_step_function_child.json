@@ -1,5 +1,5 @@
 {
-  "Comment": "This workflow gets triggered by the main step function",
+  "Comment": "This state machine gets triggered by the main step function",
   "StartAt": "Pass",
   "States": {
     "Pass": {

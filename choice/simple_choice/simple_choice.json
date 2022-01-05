@@ -1,5 +1,5 @@
 {
-  "Comment": "Hello world state machine",
+  "Comment": "Choice workflow showing simple equal conditions",
   "StartAt": "Choice",
   "States": {
     "Choice": {

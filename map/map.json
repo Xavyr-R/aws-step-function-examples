@@ -1,5 +1,5 @@
 {
-  "Comment": "Hello world state machine",
+  "Comment": "State machine showing how to use the Map type. It loops over a given input",
   "StartAt": "Map",
   "States": {
     "Map": {

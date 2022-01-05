@@ -1,5 +1,5 @@
 {
-  "Comment": "This step function will execute a child step function and wait for its result",
+  "Comment": "This state machine will execute a child state machine and wait for its result",
   "StartAt": "Step Functions StartExecution",
   "States": {
     "Step Functions StartExecution": {

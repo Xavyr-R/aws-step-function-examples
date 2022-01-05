@@ -1,0 +1,17 @@
+{
+  "Comment": "State machine showing how to do the S3 CopyObject ",
+  "StartAt": "CopyObject",
+  "States": {
+    "CopyObject": {
+      "Type": "Task",
+      "Parameters": {
+        "Bucket": "TargetBucket",
+        "CopySource": "SourceBucket+Key",
+        "Key": "TargetKey"
+      },
+      "Resource": "arn:aws:states:::aws-sdk:s3:copyObject",
+      "End": true,
+      "Comment": "Perform the S3 copy command, copying files from one location to another"
+    }
+  }
+}

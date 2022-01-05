@@ -1,5 +1,5 @@
 {
-  "Comment": "Hello world state machine",
+  "Comment": "State machine showing how to invoke a lambda function with a specific formatted payload. Note that the XXs are the account id of the account where the lambda function is created",
   "StartAt": "Lambda Invoke",
   "States": {
     "Lambda Invoke": {

@@ -1,5 +1,5 @@
 {
-  "Comment": "Hello world state machine",
+  "Comment": "Fail state machine, showing how to use the fail step. Note that any error in tasks will fail the execution by default, this is just to make it explicit (for example, catch the exception, do some cleanup than fail)",
   "StartAt": "Fail",
   "States": {
     "Fail": {

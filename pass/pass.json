@@ -1,5 +1,5 @@
 {
-  "Comment": "Hello world state machine",
+  "Comment": "State machine showing the Pass type",
   "StartAt": "Pass",
   "States": {
     "Pass": {

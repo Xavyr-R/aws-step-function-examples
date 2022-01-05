@@ -1,5 +1,5 @@
 {
-  "Comment": "Hello world state machine",
+  "Comment": "Success state machine, showing how to use the success type. Note that by default if a workflow reaches the end state it will be marked as successful, this is just to make it explicit",
   "StartAt": "Success",
   "States": {
     "Success": {

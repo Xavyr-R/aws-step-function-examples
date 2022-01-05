@@ -1,5 +1,5 @@
 {
-  "Comment": "Hello world state machine",
+  "Comment": "State machine showing how to chain steps to each other sequentially",
   "StartAt": "FirstTask",
   "States": {
     "FirstTask": {
