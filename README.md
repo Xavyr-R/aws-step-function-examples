@@ -15,10 +15,11 @@ To give a brief overview of the folders:
 - pass: shows the pass state (do nothing state which can be used as placeholder or transform results)
 - sequential_states_by_name: shows how to create a workflow with multiple steps (how to chain steps)
 - success: shows the success state (how to explicitly make state machines succeed)
-- task_input_output_management: shows how to manipulate inputs and outputs in steps
+- input_output_management: shows how to manipulate inputs and outputs in steps
 - task_invoke_glue: show how to invoke a glue job
 - task_invoke_lambda: show how to invoke a lambda function
 - task_invoke_step_function: show how to invoke other state machines
 - task_s3_copy_object: show how to directly integrate with the S3 CopyObject API
 - wait: show a wait state (wait for X seconds before continuing the state machine execution)
  
+Finally, whenever a full ARN was needed (for example when providing the name of a lambda) I've added a sequence of X's. This is should be replaced with your AWS account id.
