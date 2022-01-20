@@ -9,7 +9,7 @@
         "FunctionName": "arn:aws:lambda:eu-west-1:XXXXXXXXXXXX:function:my_lambda:$LATEST",
         "Payload": {
           "some_payload_variable": "hardcoded_value",
-          "some_second_payload_variable.$": "$.step_input.some_key",
+          "some_second_payload_variable.$": "$.hello",
           "some_third_payload_variable": 100
         }
       },
